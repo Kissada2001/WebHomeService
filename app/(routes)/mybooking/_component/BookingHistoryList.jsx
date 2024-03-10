@@ -31,11 +31,12 @@ function BookingHistoryList({ bookingHistory, type }) {
     GlobalApi.deleteBooking(booking.id).then(resp => {
       if (resp) {
         Swal.fire({
-          title: 'Booking Delete Successfully!',
+          title: 'Delete Booking Successfully!',
           icon: 'success',
           showConfirmButton: false,
           showCancelButton: false,
           timer: 2000,
+          iconColor: '#FF914D',
         });
         const updatedBookings = bookingHistorys.filter(item => item.id !== booking.id);
         setBookingHistory(updatedBookings);
@@ -89,15 +90,17 @@ function BookingHistoryList({ bookingHistory, type }) {
               </div>
               <AlertDialog>
                 <AlertDialogTrigger asChild>
-                  <Button
-                    variant="outline"
-                    className="mt-5 w-full border-red-300 ">Cancel Appointment</Button>
+                  {type === 'Booked' && ( // เพิ่มเงื่อนไขตรวจสอบชนิดข้อมูล
+                    <Button variant="outline" className="mt-5 w-full border-red-300 ">
+                      Cancel Appointment
+                    </Button>
+                  )}
                 </AlertDialogTrigger>
                 <AlertDialogContent>
                   <AlertDialogHeader>
                     <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
                     <AlertDialogDescription>
-                    Cancel Appointment Click on 'Confirm'.
+                      Cancel Appointment Click on 'Confirm'.
                     </AlertDialogDescription>
                   </AlertDialogHeader>
                   <AlertDialogFooter>

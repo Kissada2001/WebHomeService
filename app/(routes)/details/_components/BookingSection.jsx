@@ -92,6 +92,7 @@ function BookingSection({children,business}) {
                             showConfirmButton: false,
                             showCancelButton: false,
                             timer: 2000,
+                            iconColor: '#FF914D',
                           })
                     }
                 },(e)=>{
