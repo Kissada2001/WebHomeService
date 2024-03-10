@@ -32,10 +32,10 @@ function Header() {
             '>
                 <Link href={'/'} className='hover:scale-105 hover:text-primary
                 cursor-pointer'>Home</Link>
-                <h2 className='hover:scale-105 hover:text-primary
-                cursor-pointer'>Services</h2>
-                <h2 className='hover:scale-105 hover:text-primary
-                cursor-pointer'>About Us</h2>
+                <Link href={'/search/Cleaning'} className='hover:scale-105 hover:text-primary
+                cursor-pointer'>Services</Link>
+                <Link href={'/about_us'} className='hover:scale-105 hover:text-primary
+                cursor-pointer'>About Us</Link>
 
             </div>
            
